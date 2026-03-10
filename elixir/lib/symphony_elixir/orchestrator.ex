@@ -187,6 +187,14 @@ defmodule SymphonyElixir.Orchestrator do
         Logger.error("Linear project slug missing in WORKFLOW.md")
         state
 
+      {:error, :missing_asana_api_token} ->
+        Logger.error("Asana API token missing — set ASANA_API_KEY environment variable")
+        state
+
+      {:error, :missing_asana_project_slug} ->
+        Logger.error("Asana project GID missing in WORKFLOW.md tracker.project_slug")
+        state
+
       {:error, :missing_tracker_kind} ->
         Logger.error("Tracker kind missing in WORKFLOW.md")
 

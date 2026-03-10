@@ -326,10 +326,16 @@ defmodule SymphonyElixir.Config.Schema do
   end
 
   defp finalize_settings(settings) do
+    {api_key_env, assignee_env} =
+      case settings.tracker.kind do
+        "asana" -> {"ASANA_API_KEY", "ASANA_ASSIGNEE"}
+        _       -> {"LINEAR_API_KEY", "LINEAR_ASSIGNEE"}
+    end
+
     tracker = %{
       settings.tracker
-      | api_key: resolve_secret_setting(settings.tracker.api_key, System.get_env("LINEAR_API_KEY")),
-        assignee: resolve_secret_setting(settings.tracker.assignee, System.get_env("LINEAR_ASSIGNEE"))
+      | api_key: resolve_secret_setting(settings.tracker.api_key, System.get_env(api_key_env)),
+        assignee: resolve_secret_setting(settings.tracker.assignee, System.get_env(assignee_env))
     }
 
     workspace = %{
@@ -451,7 +457,7 @@ defmodule SymphonyElixir.Config.Schema do
       "type" => "workspaceWrite",
       "writableRoots" => [writable_root],
       "readOnlyAccess" => %{"type" => "fullAccess"},
-      "networkAccess" => false,
+      "networkAccess" => true,
       "excludeTmpdirEnvVar" => false,
       "excludeSlashTmp" => false
     }
