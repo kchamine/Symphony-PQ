@@ -8,7 +8,7 @@ workspace:
   root: ~/symphony-workspaces
 hooks:
   after_create: |
-    GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone git@github.com:kchamine/Symphony-Test-Repo.git .
+    GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git clone git@github.com:PQworks/client-portal.git .
 agent:
   max_concurrent_agents: 3
   max_turns: 20
