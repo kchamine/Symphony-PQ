@@ -455,7 +455,7 @@ defmodule SymphonyElixir.Config.Schema do
 
     %{
       "type" => "workspaceWrite",
-      "writableRoots" => [writable_root],
+      "writableRoots" => [writable_root, Path.join(writable_root, ".git")],
       "readOnlyAccess" => %{"type" => "fullAccess"},
       "networkAccess" => true,
       "excludeTmpdirEnvVar" => false,
