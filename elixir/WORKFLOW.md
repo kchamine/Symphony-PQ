@@ -14,6 +14,7 @@ agent:
   max_turns: 20
 codex:
   command: codex app-server
+  approval_policy: never
 ---
 
 You are working on an Asana task {{ issue.identifier }}.
