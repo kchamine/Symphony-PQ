@@ -1,22 +1,26 @@
-#### Context
+### Summary
+- 
 
-<!-- Why is this change needed? Length <= 240 chars -->
+### Why
+- 
 
-#### TL;DR
+### Changes
+- 
 
-*<!-- A short description of what we are changing. Use simple language. Assume reader is not familiar with this code. Length <= 120 chars -->*
+### Validation
+- [ ] `npm test`
+- [ ] `npm run build`
+- [ ] Manual verification completed (describe below)
 
-#### Summary
+Manual verification notes:
+- 
 
-- <!-- Details of the changes in bullet points -->
-- <!-- Keep them high level -->
-- <!-- Each item <= 120 chars -->
+### ExecPlan
+- Plan: `none (small change)` or `.agent/execplans/<plan-file>.md`
+- Notes:
 
-#### Alternatives
-
-- <!-- What alternatives have been considered? Why not? -->
-
-#### Test Plan
-
-- [ ] `make -C elixir all`
-- [ ] <!-- Additional targeted checks (list below) -->
+### Metadata
+- Issue:
+- Risk: low | medium | high
+- Rollback:
+- Breaking change: yes | no

@@ -50,10 +50,17 @@ mix specs.check
 
 - PR body must follow `../.github/pull_request_template.md` exactly.
 - Validate PR body locally when needed:
+- Use concise, imperative commit messages (e.g., "Add AGENTS guidance").
+- Summarize user-visible changes in PR descriptions.
 
 ```bash
 mix pr_body.check --file /path/to/pr_body.md
 ```
+
+## PR metadata quality
+- Use the repository PR template.
+- Fill metadata fields completely (Issue, Plan, Risk, Rollback, Breaking change).
+- PRs must include validation evidence and enough context for reviewers to assess risk quickly.
 
 ## Docs Update Policy
 
